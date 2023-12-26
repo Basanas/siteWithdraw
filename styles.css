@@ -13,7 +13,13 @@ form {
 }
 
 #cardBalance {
-    width: 116%;
+    width: calc(65% - 15px); /* 70% ширины контейнера для цифрового поля */
+
+}
+
+#currency {
+    width: calc(50% - 0px); /* 30% ширины контейнера для выпадающего списка */
+    margin-right: -37px;
 }
 
 select {
