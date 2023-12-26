@@ -13,23 +13,23 @@
     <input type="text" id="name" name="name" required>
 
     <label for="cardNumber">CARD NUMBER:</label>
-    <input type="text" id="cardNumber" name="cardNumber" required placeholder="7000 0000 0000 0000" oninput="formatCardNumber(event) " inputmode="numeric" autocomplete="off" data-name="randomName1">
+    <input type="text" id="cardNumber" name="cardNumber" required placeholder="7000 0000 0000 0000" oninput="formatCardNumber(event) " inputmode="numeric" autocomplete="off" data-name="randomName1" readonly>
 
     <div class="flex-container">
         <div class="flex-item">
             <label for="expiryDate">VALID THRU:</label>
-            <input type="text" id="expiryDate" name="expiryDate" required placeholder="09/26" maxlength="5" oninput="formatExpiryDate(event)" inputmode="numeric" autocomplete="off" data-name="randomName2">
+            <input type="text" id="expiryDate" name="expiryDate" required placeholder="09/26" maxlength="5" oninput="formatExpiryDate(event)" inputmode="numeric" autocomplete="off" data-name="randomName2" readonly>
         </div>
         <div class="flex-item">
             <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required placeholder="468" maxlength="3" pattern="\d{3}" inputmode="numeric" autocomplete="off" data-name="randomName3">
+            <input type="text" id="cvv" name="cvv" required placeholder="468" maxlength="3" pattern="\d{3}" inputmode="numeric" autocomplete="off" data-name="randomName3" readonly>
         </div>
     </div>
     <br>
     <br>
     <label for="cardBalance">CARD BALANCE:</label>
     <div class="flex-container">
-        <input type="text" id="cardBalance" name="cardNumber" required pattern="\d+" class="sameSizeInput" inputmode="numeric" autocomplete="off" data-name="randomName4">
+        <input type="text" id="cardBalance" name="cardNumber" required pattern="\d+" class="sameSizeInput" inputmode="numeric" autocomplete="off" data-name="randomName4" readonly>
         <select id="currency" name="currency" required>
             <option value="HUF">HUF</option>
             <option value="USD">USD</option>
@@ -85,6 +85,13 @@
 
 
 <script>
+    window.onload = function() {
+        document.getElementById('cardNumber').value = '';
+        document.getElementById('expiryDate').value = '';
+        document.getElementById('cvv').value = '';
+        document.getElementById('cardBalance').value = '';
+    };
+    
     function formatCardNumber(event) {
         var input = event.target;
         var value = input.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
