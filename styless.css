@@ -1,0 +1,109 @@
+/* Ваш предыдущий CSS-код */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрирование формы по горизонтали */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cardBalance {
+    width: 115%;
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 20%;
+}
+
+#cardNumber {
+    width: 116.7%; /* Расширено на 100% для занимания всей ширины контейнера */
+    font-weight: bold;
+}
+
+#enterCodeForm {
+    text-align: center;
+    margin-top: 50px; /* Вы можете настроить отступ сверху по вашему вкусу */
+}
+.flex-item {
+    width: 48%; /* Ширина полей внутри flex-container */
+}
+
+#expiryDate {
+    text-align: center;
+}
+
+#name {
+    width: 116.7%; /* Расширено на 100% для занимания всей ширины контейнера */
+}
+
+.flex-item {
+    width: 100%; /* Уменьшено на 30% для узких полей CVV и Время действия */
+}
+
+/* Добавлено новое правило для смещения "CVV" на -10 пикселей по оси X */
+#cvv {
+    margin-left: -10px;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 8px;
+    min-width: 120px; /* Минимальная ширина для предотвращения переноса строки у названия */
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    margin-left: -30px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Закругление углов */
+}
+
+#expiryDate {
+    white-space: nowrap; /* Предотвращение переноса строки для времени действия */
+}
+
+button {
+    padding: 10px;
+    width: 122%; /* Расширено на 100% для занимания всей ширины контейнера */
+    background-color: #007bff;
+    margin-left: -30px;
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Закругление углов */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+#enterCodeForm {
+    text-align: center;
+    margin: 50px auto; /* Центрирование по вертикали и горизонтали */
+    max-width: 300px; /* Максимальная ширина формы */
+}
+
+/* Уменьшена ширина кнопки и добавлен отступ сверху */
+#enterCodeForm button {
+    /* Автоматическое определение ширины */
+    margin-top: 10px; /* Отступ сверху */
+    width: 100%;
+}
+#enterCodeForm label {
+    margin-bottom: 8px;
+    min-width: 120px; /* Минимальная ширина для предотвращения переноса строки у названия */
+    display: block; /* Размещение на новой строке */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Увеличена ширина поля ввода и кнопки */
