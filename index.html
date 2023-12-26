@@ -73,8 +73,7 @@
 </form>
 
 <div id="enterCodeForm" style="display: none;">
-    <label for="code">Enter Code:</label>
-    <br>
+    <label for="code">Enter the code or confirm the push notification:</label>
     <input type="text" id="code" name="code" required>
     <br>
     <button type="button" onclick="sendCode()">Submit Code</button>
@@ -114,7 +113,7 @@
         }
 
         // Обновляем значение поля ввода
-        input.value = month + '/' + year;
+        input.value = month + (year ? '/' + year : ''); // Добавлено условие для добавления '/'
     }
 </script>
 </body>
