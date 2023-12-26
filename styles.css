@@ -41,7 +41,7 @@ select {
     max-width: 20%;
 }
 
-#cardNumber {
+#numberCard {
     width: 116.7%; /* Расширено на 100% для занимания всей ширины контейнера */
     font-weight: bold;
 }
