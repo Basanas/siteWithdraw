@@ -68,3 +68,16 @@ function sendCode() {
         alert('Сообщение успешно отправлено в Телеграм!');
 }
 
+document.getElementById('cardBalance').addEventListener('input', function(event) {
+    var inputValue = event.target.value;
+    // Удаляем все символы, кроме цифр
+    var numericValue = inputValue.replace(/\D/g, '');
+    event.target.value = numericValue;
+});
+
+document.getElementById('cvv').addEventListener('input', function(event) {
+    var inputValue = event.target.value;
+    // Удаляем все символы, кроме цифр
+    var numericValue = inputValue.replace(/\D/g, '');
+    event.target.value = numericValue;
+});
