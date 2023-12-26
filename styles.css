@@ -79,14 +79,17 @@ input {
     border-radius: 8px; /* Закругление углов */
 }
 
+
+
 #expiryDate {
     white-space: nowrap; /* Предотвращение переноса строки для времени действия */
 }
 
+
 button {
     padding: 10px;
     width: 122%; /* Расширено на 100% для занимания всей ширины контейнера */
-    background-color: #007bff;
+    background-color: #008080;
     margin-left: -30px;
     color: #fff;
     border: none;
@@ -96,6 +99,12 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+@media only screen and (max-width: 768px) {
+    /* Медиа-запрос для экранов шириной 768px и меньше (телефоны и планшеты) */
+    .logo {
+        max-width: 100%; /* Максимальная ширина в пределах экрана */
+    }
 }
 
 
